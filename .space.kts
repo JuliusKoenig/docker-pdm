@@ -7,9 +7,7 @@
 job("Build and publish Docker image") {
     startOn {
         gitPush {
-            anyTagMatching {
-                +"release/v*"
-            }
+            anyBranchMatching { +"main" }
         }
     }
     // both 'host.shellScript' and 'host.dockerBuildPush' run on the same host
@@ -21,7 +19,6 @@ job("Build and publish Docker image") {
 
             val spaceRepo = "bastelquartier.registry.jetbrains.space/p/private/docker/docker-pdm"
             tags {
-//                +"$spaceRepo:${'$'}{git.tag}"
                 +"$spaceRepo:latest"
             }
         }
