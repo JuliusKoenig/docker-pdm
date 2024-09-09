@@ -14,13 +14,6 @@ job("Build and publish Docker image") {
     }
     // both 'host.shellScript' and 'host.dockerBuildPush' run on the same host
     host("Build artifacts and a Docker image") {
-        // Gradle build creates artifacts in ./build
-        shellScript {
-            content = """
-                ./gradlew build
-            """
-        }
-
         dockerBuildPush {
             // Note that if Dockerfile is in the project root, we don't specify its path.
             // We also imply that Dockerfile takes artifacts from ./build and puts them to image
