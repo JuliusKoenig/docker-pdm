@@ -28,7 +28,8 @@ job("Build and publish Docker image") {
 
             val spaceRepo = "bastelquartier.registry.jetbrains.space/p/private/docker/docker-pdm"
             tags {
-                +"$spaceRepo:${'$'}{git.tag}"
+//                +"$spaceRepo:${'$'}{git.tag}"
+                +"$spaceRepo:latest"
             }
         }
     }

@@ -1,7 +1,6 @@
 FROM ubuntu:24.04
 LABEL authors="Julius Koenig"
 LABEL description="A Docker image for CIs using pdm."
-LABEL version="0.1.0"
 
 # update apt
 RUN apt-get update
